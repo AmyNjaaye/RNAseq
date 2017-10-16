@@ -20,13 +20,13 @@ my $input_matrix_file = $ARGV[0];
 my $output_file = $ARGV[1];
 
 
-#~~~~~~~~Opening input file for reading
+#~~~~~~~~Opening output file for writing in .txt format
 open OUTPUT, '>', "$output_file.txt" or die "Cannot open $output_file\n";
 
-#~~~~~~~~Opening output file for writing and set headers. 
+#~~~~~~~~Set output file headers. 
 printf OUTPUT ("%-20s %-20s\n", "Gene", "P-adj"); 
 
-#~~~~~~~~Filter according to p-adj and output result in a .txt format
+#~~~~~~~~Opening input file for reading then filter according to p-adj and output result in a .txt format
 open my $file, '<', $input_matrix_file or die "Cannot open $input_matrix_file\n";
 my @list_lines;
 while (my $line = <$file>)
